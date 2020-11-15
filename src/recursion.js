@@ -106,7 +106,7 @@ var exponent = function(base, exp) {
     return 1;
   }
   if (exp < 0) {
-    return parseFloat(((1/base) * exponent(base, exp + 1)).toFixed(5));
+    return parseFloat((1 / base * exponent(base, exp + 1)).toFixed(5));
   } else {
     return base * exponent(base, exp - 1);
   }

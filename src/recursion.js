@@ -246,7 +246,7 @@ var gcd = function(x, y) {
 // compareStr('house', 'houses') // false
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
-  if (str1.length === 0 && str2.length === 0) {
+  if (!str1.length && !str2.length) {
     return true;
   }
   if (str1[0] === str2[0]) {
@@ -262,7 +262,7 @@ var createArray = function(str) {
   if (str === '') {
     return [];
   } else {
-    return [str[0]].concat(createArray(str.substring(1)));
+    return [str[0], ...createArray(str.substring(1))];
   }
 };
 
